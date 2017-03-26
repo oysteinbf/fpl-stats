@@ -6,7 +6,7 @@ import numpy as np
 import seaborn
 import requests
 
-leagueIDs=['310745', '432878'] #<---Input your league IDs
+leagueIDs=['XXXXXX', 'XXXXXX'] #<---Input your league IDs
 
 for leagueID in leagueIDs:
 
@@ -46,6 +46,9 @@ for leagueID in leagueIDs:
     df.set_index('GW',inplace=True)
     df.index=df.index.map(int)
     df.rename(columns={'GW_temp': 'GW'}, inplace=True)
+
+    #Export to csv for use in plotly_fpl.py (which also could be integrated into this script)
+    df.to_csv('df.csv', encoding='utf-8')
 
     #**********************************************************
     #Plotting
@@ -178,7 +181,7 @@ for leagueID in leagueIDs:
     i=0
     for key,r in dfp.iterrows():
         plt.scatter(r['Team Value'],r['League Rank'],s=300,label=key,color=plt.cm.Paired(rgbs[i]))
-        ax.text(r['Team Value']+0.07,i+1,key,verticalalignment='center')
+        ax.text(r['Team Value']+0.12,i+1,key,verticalalignment='center')
         i=i+1
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
