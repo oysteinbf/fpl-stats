@@ -19,7 +19,7 @@ When exporting the animation to a html file in plot.ly, the minified plotly.js s
 </head>
 ```
 
-The visualisation looks like [this](http://htmlpreview.github.io/?https://github.com/oysteinbf/fpl-stats/blob/master/bubbles_example.html)
+The visualisation looks like [this](https://raw.githack.com/oysteinbf/fpl-stats/master/bubbles_example.html).
 
 ### Example plots from fpl.py:
 
